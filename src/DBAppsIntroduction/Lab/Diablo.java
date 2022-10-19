@@ -25,6 +25,7 @@ public class Diablo {
 
         ResultSet result = query.executeQuery();
 
+
         if (result.next()) {
             String dbUsername = result.getString("user_name");
             String dbFirstName = result.getString("first_name");
