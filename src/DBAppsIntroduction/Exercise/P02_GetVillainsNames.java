@@ -8,7 +8,7 @@ public class P02_GetVillainsNames {
 
         Properties props = new Properties();
         props.setProperty("user", "root");
-        props.setProperty("password", "Bozhidar1!");
+        props.setProperty("password", "****");
 
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", props);
 
