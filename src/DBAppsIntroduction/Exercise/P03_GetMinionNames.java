@@ -9,7 +9,7 @@ public class P03_GetMinionNames {
 
         Properties properties = new Properties();
         properties.setProperty("user", "root");
-        properties.setProperty("password", "Bozhidar1!");
+        properties.setProperty("password", "****");
 
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
 
