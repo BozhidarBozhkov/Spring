@@ -1,17 +1,13 @@
 package DBAppsIntroduction.Exercise;
 
 import java.sql.*;
-import java.util.Properties;
 import java.util.Scanner;
 
 public class P03_GetMinionNames {
     public static void main(String[] args) throws SQLException {
 
-        Properties properties = new Properties();
-        properties.setProperty("user", "root");
-        properties.setProperty("password", "****");
-
-        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/minions_db", properties);
+        DBConnector.createConnection("minions_db");
+        Connection connection = DBConnector.getConnection();
 
         Scanner scanner = new Scanner(System.in);
         int villainId = Integer.parseInt(scanner.nextLine());
