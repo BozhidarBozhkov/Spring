@@ -16,7 +16,6 @@ public class Queries {
             " HAVING number_of_minions > 15" +
             " ORDER BY number_of_minions DESC";
     public static final String SELECT_TOWN_NAMES_BY_COUNTRY = "SELECT name FROM towns WHERE country = ?";
-    public static final String GET_COUNT_OF_AFFECTED_TOWNS = "SELECT COUNT(name) FROM towns WHERE country = ?";
     public static final String UPDATE_TOWN_NAMES_UPPER_CASING = "UPDATE towns SET name = UPPER(name) WHERE country = ?";
 
 }
