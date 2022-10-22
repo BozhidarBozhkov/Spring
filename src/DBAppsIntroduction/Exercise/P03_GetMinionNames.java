@@ -12,24 +12,20 @@ public class P03_GetMinionNames {
         Scanner scanner = new Scanner(System.in);
         int villainId = Integer.parseInt(scanner.nextLine());
 
-        PreparedStatement villainStatement = connection.prepareStatement(
-                "SELECT name FROM villains WHERE id = ?");
+        PreparedStatement villainStatement = connection.prepareStatement(Queries.SELECT_VILLAIN_BY_NAME);
         villainStatement.setInt(1, villainId);
 
         ResultSet villainSet = villainStatement.executeQuery();
 
         if (!villainSet.next()) {
-            System.out.printf("No villain with ID %d exists in the database.", villainId);
+            System.out.printf(ConstantMessages.NO_SUCH_VILLAIN, villainId);
             return;
         }
 
         String villainName = villainSet.getString("name");
         System.out.println("Villain: " + villainName);
 
-        PreparedStatement minionStatement = connection.prepareStatement("" +
-                "SELECT name, age FROM minions AS m" +
-                " JOIN minions_villains AS mv ON mv.minion_id = m.id" +
-                " WHERE mv.villain_id = ?");
+        PreparedStatement minionStatement = connection.prepareStatement(Queries.SELECT_MINIONS_BY_NAME_AND_AGE);
         minionStatement.setInt(1, villainId);
 
         ResultSet minionSet = minionStatement.executeQuery();
