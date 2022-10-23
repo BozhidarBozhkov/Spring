@@ -17,5 +17,7 @@ public class Queries {
             " ORDER BY number_of_minions DESC";
     public static final String SELECT_TOWN_NAMES_BY_COUNTRY = "SELECT name FROM towns WHERE country = ?";
     public static final String UPDATE_TOWN_NAMES_UPPER_CASING = "UPDATE towns SET name = UPPER(name) WHERE country = ?";
+    public static final String DELETE_VILLAIN = "DELETE FROM villains WHERE id = ?";
+    public static final String RELEASED_MINIONS = "DELETE FROM minions_villains WHERE villain_id = ? ";
 
 }
