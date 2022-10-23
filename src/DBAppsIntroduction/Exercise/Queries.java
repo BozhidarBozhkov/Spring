@@ -19,5 +19,6 @@ public class Queries {
     public static final String UPDATE_TOWN_NAMES_UPPER_CASING = "UPDATE towns SET name = UPPER(name) WHERE country = ?";
     public static final String DELETE_VILLAIN = "DELETE FROM villains WHERE id = ?";
     public static final String RELEASED_MINIONS = "DELETE FROM minions_villains WHERE villain_id = ? ";
+    public static final String SELECT_MINIONS_BY_NAME = "SELECT name FROM minions";
 
 }
