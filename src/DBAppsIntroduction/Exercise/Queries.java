@@ -20,5 +20,7 @@ public class Queries {
     public static final String DELETE_VILLAIN = "DELETE FROM villains WHERE id = ?";
     public static final String RELEASED_MINIONS = "DELETE FROM minions_villains WHERE villain_id = ? ";
     public static final String SELECT_MINIONS_BY_NAME = "SELECT name FROM minions";
+    public static final String UPDATE_MINION_AGE_AND_NAME = "UPDATE minions SET age = age + 1, name = lower(name) WHERE id IN (%s)";
+    public static final String SELECT_MINION_NAME_AND_AGE = "SELECT name, age FROM minions";
 
 }

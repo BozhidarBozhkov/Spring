@@ -11,5 +11,6 @@ public class ConstantMessages {
     public static final String VILLAIN_NOT_FOUND = "No such villain was found";
     public static final String VILLAIN_DELETED = "%s was deleted%n";
     public static final String MINION_COUNT_DELETED = "%d minions released";
+    public static final String MINION_NAME_AND_AGE = "%s %d%n";
 
 }
