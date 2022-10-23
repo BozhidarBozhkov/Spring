@@ -23,4 +23,5 @@ public class Queries {
     public static final String UPDATE_MINION_AGE_AND_NAME = "UPDATE minions SET age = age + 1, name = lower(name) WHERE id IN (%s)";
     public static final String SELECT_MINION_NAME_AND_AGE = "SELECT name, age FROM minions";
 
+
 }
