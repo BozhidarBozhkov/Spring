@@ -18,7 +18,7 @@ public class P05_EmployeesFromDepartment {
         entityManager.createQuery("SELECT e FROM Employee e WHERE e.department.name = :dp " +
                 "ORDER BY e.salary, e.id", Employee.class)
                 .setParameter("dp", department).getResultList()
-                .forEach(e -> System.out.printf(PRINT_EMP_FORMAT, e.getFirstName(), e.getLastName(), e.getDepartment(), e.getSalary()));
+                .forEach(e -> System.out.printf(PRINT_EMP_FORMAT, e.getFirstName(), e.getLastName(), e.getDepartment().getName(), e.getSalary()));
 
         entityManager.close();
 
