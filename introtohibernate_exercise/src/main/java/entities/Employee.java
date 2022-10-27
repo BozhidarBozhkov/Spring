@@ -2,9 +2,9 @@ package entities;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
-import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 @Table(name = "employees")
@@ -127,5 +127,13 @@ public class Employee {
 
     public void setProjects(Set<Project> projects) {
         this.projects = projects;
+    }
+
+    @Override
+    public String toString() {
+
+        return firstName + " " + lastName + " - " +
+                department.getName() + "\n"
+                + projects.stream().map(Project::getName).collect(Collectors.joining("\n"));
     }
 }
