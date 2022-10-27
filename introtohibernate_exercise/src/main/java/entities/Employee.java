@@ -3,6 +3,7 @@ package entities;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Comparator;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -134,6 +135,7 @@ public class Employee {
 
         return firstName + " " + lastName + " - " +
                 department.getName() + "\n"
-                + projects.stream().map(Project::getName).collect(Collectors.joining("\n"));
+                + projects.stream()
+                .map(Project::getName).sorted().collect(Collectors.joining(System.lineSeparator()));
     }
 }
