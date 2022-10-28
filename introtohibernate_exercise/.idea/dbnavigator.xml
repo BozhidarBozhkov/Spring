@@ -29,9 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="0186f0ba-892a-42a7-aeff-b991d1cc8454">
-      <console name="Connection" type="STANDARD" schema="soft_uni_database" session="Main"><![CDATA[SELECT p.name, p.description, p.start_date, p.end_date FROM projects p
-ORDER BY p.name, p.end_date desc 
-LIMIT 10]]></console>
+      <console name="Connection" type="STANDARD" schema="soft_uni_database" session="Main"><![CDATA[SELECT * FROM employees]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -43,6 +41,7 @@ LIMIT 10]]></console>
   <component name="DBNavigator.Project.DatasetFilterManager">
     <filter-actions connection-id="0186f0ba-892a-42a7-aeff-b991d1cc8454" dataset="soft_uni_database.projects" active-filter-id="" />
     <filter-actions connection-id="0186f0ba-892a-42a7-aeff-b991d1cc8454" dataset="soft_uni_database.addresses" active-filter-id="EMPTY_FILTER" />
+    <filter-actions connection-id="0186f0ba-892a-42a7-aeff-b991d1cc8454" dataset="soft_uni_database.employees" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
