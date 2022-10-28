@@ -29,7 +29,9 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="0186f0ba-892a-42a7-aeff-b991d1cc8454">
-      <console name="Connection" type="STANDARD" schema="soft_uni_database" session="Main"><![CDATA[SELECT * FROM employees]]></console>
+      <console name="Connection" type="STANDARD" schema="soft_uni_database" session="Main"><![CDATA[SELECT * from employees;
+
+SELECT MAX(salary) FROM employees GROUP BY department_id HAVING MAX(salary) NOT BETWEEN 30000 AND 70000]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
