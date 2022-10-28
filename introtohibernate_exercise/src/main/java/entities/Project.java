@@ -3,6 +3,7 @@ package entities;
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Set;
 
 @Entity
@@ -69,5 +70,18 @@ public class Project {
 
     public void setEmployees(Set<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+
+//        "Project name: All-Purpose Bike Stand\n" +
+//                " \tProject Description: Research, design and development of …\n" +
+//                " \tProject Start Date:2005-09-01 00:00:00.0\n" +
+//                " \tProject End Date: null\n"
+        return "Project name: " + name + System.lineSeparator()
+                + "\t" + "Project Description: " + description + System.lineSeparator()
+                + "\t" + "Project Start Date:" + startDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S")) + System.lineSeparator()
+                + "\t" + "Project End Date: " + endDate + System.lineSeparator();
     }
 }
