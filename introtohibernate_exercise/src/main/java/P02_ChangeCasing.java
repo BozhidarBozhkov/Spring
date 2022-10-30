@@ -1,26 +1,18 @@
 import entities.Town;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
-import javax.persistence.Query;
 import java.util.List;
-import java.util.Locale;
+
+import static common.SqlQueries.*;
+import static core.emf.entityManager;
+
 
 public class P02_ChangeCasing {
-    private static final String DATABASE_NAME = "soft_uni_database";
-  //  private static final String UPDATE_ALL_TOWNS_WITH_NAME_LENGTH_MORE_THAN_5 =
-   //         "UPDATE Town t SET t.name = UPPER(t.name) WHERE LENGTH(t.name) > 5";
 
     public static void main(String[] args) {
 
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory(DATABASE_NAME);
-
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
-
         entityManager.getTransaction().begin();
 
-        List<Town> towns = entityManager.createQuery("SELECT t from Town t", Town.class).getResultList();
+        List<Town> towns = entityManager.createQuery(SELECT_ELIGIBLE_TOWNS, Town.class).getResultList();
 
 
         for (Town town : towns) {

@@ -1,24 +1,22 @@
+import core.emf;
 import entities.Address;
 import entities.Employee;
 import entities.Town;
-import org.dom4j.io.ElementModifier;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
 import java.util.List;
 import java.util.Scanner;
 
+import static common.SqlQueries.*;
+import static core.emf.entityManager;
+
 public class P13_RemoveTowns {
     public static void main(String[] args) {
-        final EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory("soft_uni_database");
-        final EntityManager entityManager = entityManagerFactory.createEntityManager();
 
         String townName = new Scanner(System.in).nextLine();
 
         entityManager.getTransaction().begin();
         try {
-            List<Address> addresses = entityManager.createQuery("SELECT a FROM Address a WHERE a.town.name = :town", Address.class)
+            List<Address> addresses = entityManager.createQuery(SELECT_ADDRESS_IN_GIVEN_TOWN, Address.class)
                     .setParameter("town", townName).getResultList();
 
             for (Address address : addresses) {
@@ -28,8 +26,9 @@ public class P13_RemoveTowns {
                 entityManager.remove(address);
             }
 
-            Town town = entityManager.createQuery("SELECT t FROM Town t WHERE t.name = :town", Town.class)
-                    .setParameter("town", townName).getSingleResult();
+            Town town = entityManager.createQuery(SELECT_GIVEN_TOWN, Town.class)
+                    .setParameter("town", townName)
+                    .getSingleResult();
 
 
             if (addresses.size() == 1) {
