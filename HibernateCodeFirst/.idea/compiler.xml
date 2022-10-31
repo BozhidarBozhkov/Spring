@@ -6,9 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="introToHibernate" />
-        <module name="introToHibernate_Exercise" />
+        <module name="GringottsDatabase" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="GringottsDatabase" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>
