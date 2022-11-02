@@ -29,7 +29,7 @@
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="6c31bdfe-cfd9-4844-8992-f42fd4d3c686">
-      <console name="Exercise" type="STANDARD" schema="mysql" session="Main" />
+      <console name="Exercise" type="STANDARD" schema="mysql" session="Main"><![CDATA[select * from products]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
@@ -37,6 +37,10 @@
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="6c31bdfe-cfd9-4844-8992-f42fd4d3c686" />
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-actions connection-id="6c31bdfe-cfd9-4844-8992-f42fd4d3c686" dataset="sales_db.products" active-filter-id="" />
+    <filter-actions connection-id="6c31bdfe-cfd9-4844-8992-f42fd4d3c686" dataset="sales_db.customers" active-filter-id="" />
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
