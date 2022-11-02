@@ -1,3 +1,5 @@
+package gringottsDatabse;
+
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
