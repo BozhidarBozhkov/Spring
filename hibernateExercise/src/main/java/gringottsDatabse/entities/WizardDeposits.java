@@ -1,46 +1,76 @@
 package gringottsDatabse.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
 @Table(name = "wizard_deposits")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 public class WizardDeposits {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(name = "first_name", length = 50)
     private String firstName;
 
+    @Column(name = "last_name", length = 60, nullable = false)
     private String lastName;
 
+    @Column(length = 1000)
     private String notes;
 
+    @Column(nullable = false)
     private int age;
 
+    @Column(name = "magic_wand_creator", length = 100)
     private String magicWandCreator;
 
+    @Column(name = "magic_wand_size")
     private short magicWandSize;
 
+    @Column(name = "deposit_group", length = 20)
     private String depositGroup;
 
+    @Column(name = "deposit_start_date", nullable = false)
     private LocalDate depositStartDate;
 
+    @Column(name = "deposit_amount", nullable = false)
     private BigDecimal depositAmount;
 
+    @Column(name = "deposit_interest", nullable = false)
     private BigDecimal depositInterest;
 
+    @Column(name = "deposit_charge", nullable = false)
     private BigDecimal depositCharge;
 
+    @Column(name = "deposit_expiration_date")
     private LocalDate depositExpirationDate;
 
+    @Column(name = "is_deposit_expired")
     private boolean isDepositExpired;
 
-    @Id
-    @Column
+    public WizardDeposits() {
+    }
+
+    public WizardDeposits(String firstName, String lastName, String notes, int age, String magicWandCreator, short magicWandSize, String depositGroup, LocalDate depositStartDate, BigDecimal depositAmount, BigDecimal depositInterest, BigDecimal depositCharge, LocalDate depositExpirationDate, boolean isDepositExpired) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.notes = notes;
+        this.age = age;
+        this.magicWandCreator = magicWandCreator;
+        this.magicWandSize = magicWandSize;
+        this.depositGroup = depositGroup;
+        this.depositStartDate = depositStartDate;
+        this.depositAmount = depositAmount;
+        this.depositInterest = depositInterest;
+        this.depositCharge = depositCharge;
+        this.depositExpirationDate = depositExpirationDate;
+        this.isDepositExpired = isDepositExpired;
+    }
+
     public Long getId() {
         return id;
     }
@@ -49,7 +79,7 @@ public class WizardDeposits {
         this.id = id;
     }
 
-    @Column(name = "first_name", length = 50)
+
     public String getFirstName() {
         return firstName;
     }
@@ -58,7 +88,7 @@ public class WizardDeposits {
         this.firstName = firstName;
     }
 
-    @Column(name = "last_name", length = 60, nullable = false)
+
     public String getLastName() {
         return lastName;
     }
@@ -67,7 +97,7 @@ public class WizardDeposits {
         this.lastName = lastName;
     }
 
-    @Column(length = 1000)
+
     public String getNotes() {
         return notes;
     }
@@ -76,7 +106,7 @@ public class WizardDeposits {
         this.notes = notes;
     }
 
-    @Column(nullable = false)
+
     public int getAge() {
         return age;
     }
@@ -85,7 +115,7 @@ public class WizardDeposits {
         this.age = age;
     }
 
-    @Column(name = "magic_wand_creator", length = 100)
+
     public String getMagicWandCreator() {
         return magicWandCreator;
     }
@@ -94,7 +124,7 @@ public class WizardDeposits {
         this.magicWandCreator = magicWandCreator;
     }
 
-    @Column(name = "magic_wand_size")
+
     public short getMagicWandSize() {
         return magicWandSize;
     }
@@ -103,7 +133,7 @@ public class WizardDeposits {
         this.magicWandSize = magicWandSize;
     }
 
-    @Column(name = "deposit_group", length = 20)
+
     public String getDepositGroup() {
         return depositGroup;
     }
@@ -112,7 +142,7 @@ public class WizardDeposits {
         this.depositGroup = depositGroup;
     }
 
-    @Column(name = "deposit_start_date", nullable = false)
+
     public LocalDate getDepositStartDate() {
         return depositStartDate;
     }
@@ -121,7 +151,7 @@ public class WizardDeposits {
         this.depositStartDate = depositStartDate;
     }
 
-    @Column(name = "deposit_amount", nullable = false)
+
     public BigDecimal getDepositAmount() {
         return depositAmount;
     }
@@ -130,7 +160,7 @@ public class WizardDeposits {
         this.depositAmount = depositAmount;
     }
 
-    @Column(name = "deposit_interest", nullable = false)
+
     public BigDecimal getDepositInterest() {
         return depositInterest;
     }
@@ -139,7 +169,7 @@ public class WizardDeposits {
         this.depositInterest = depositInterest;
     }
 
-    @Column(name = "deposit_charge", nullable = false)
+
     public BigDecimal getDepositCharge() {
         return depositCharge;
     }
@@ -148,7 +178,7 @@ public class WizardDeposits {
         this.depositCharge = depositCharge;
     }
 
-    @Column(name = "deposit_expiration_date")
+
     public LocalDate getDepositExpirationDate() {
         return depositExpirationDate;
     }
@@ -157,7 +187,7 @@ public class WizardDeposits {
         this.depositExpirationDate = depositExpirationDate;
     }
 
-    @Column(name = "is_deposit_expired")
+
     public boolean isDepositExpired() {
         return isDepositExpired;
     }
