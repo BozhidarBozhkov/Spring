@@ -1,11 +1,10 @@
 package entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -36,6 +35,11 @@ public class Patient extends BaseEntity {
     @OneToMany(mappedBy = "patient")
     private Set<Visitation> visitations;
 
+    @ManyToMany
+    @JoinTable(name = "diagnose_patients", joinColumns = @JoinColumn(name = "patient_id", referencedColumnName = "id"),
+            inverseJoinColumns = @JoinColumn(name = "diagnose_id", referencedColumnName = "id"))
+    private List<Diagnose> diagnoses;
+
     public Patient() {
         super();
     }
@@ -46,9 +50,9 @@ public class Patient extends BaseEntity {
         this.address = address;
         this.email = email;
         this.dateOfBirth = dateOfBirth;
-        //this.picture = picture;
         this.isInsured = isInsured;
         this.visitations = new HashSet<>();
+        this.diagnoses = new ArrayList<>();
     }
 
     public String getFirstName() {

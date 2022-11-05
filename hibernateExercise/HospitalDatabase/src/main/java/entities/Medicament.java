@@ -9,13 +9,6 @@ public class Medicament extends BaseEntity{
     @Column(nullable = false)
     private String name;
 
-    @ManyToMany
-    @JoinTable(name = "diagnose_medicaments", joinColumns = @JoinColumn(name = "medicament_id", referencedColumnName = "id"),
-    inverseJoinColumns = @JoinColumn(name = "diagnose_id", referencedColumnName = "id"))
-    private Diagnose diagnose;
-
-
-
     public Medicament() {
     }
 
@@ -32,11 +25,4 @@ public class Medicament extends BaseEntity{
     }
 
 
-    public Diagnose getDiagnose() {
-        return diagnose;
-    }
-
-    public void setDiagnose(Diagnose diagnose) {
-        this.diagnose = diagnose;
-    }
 }

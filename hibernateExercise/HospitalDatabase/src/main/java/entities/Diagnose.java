@@ -1,6 +1,8 @@
 package entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Diagnose extends BaseEntity{
@@ -11,6 +13,8 @@ public class Diagnose extends BaseEntity{
     @Column(length = 1000)
     private String comments;
 
+    @ManyToMany(mappedBy = "diagnoses")
+    private List<Patient> patients;
 
     public Diagnose() {
     }
@@ -18,6 +22,7 @@ public class Diagnose extends BaseEntity{
     public Diagnose(String name, String comments) {
         this.name = name;
         this.comments = comments;
+        this.patients = new ArrayList<>();
     }
 
     public String getName() {

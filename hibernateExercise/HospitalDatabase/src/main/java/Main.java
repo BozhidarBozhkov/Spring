@@ -14,7 +14,7 @@ public class Main {
 
         entityManager.getTransaction().begin();
 
-        Patient patient = new Patient("Petar", "Petrov", "Sofia", "petrov@abv.bg", LocalDate.of(1980, 7, 12) ,true);
+        Patient patient = new Patient("Petar", "Petrov", "Sofia", "ppppov@abv.bg", LocalDate.of(1980, 7, 12) ,true);
         entityManager.persist(patient);
 
         Medicament medicament = new Medicament("Aviron");
