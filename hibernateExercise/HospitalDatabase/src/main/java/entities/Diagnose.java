@@ -16,6 +16,9 @@ public class Diagnose extends BaseEntity{
     @ManyToMany(mappedBy = "diagnoses")
     private List<Patient> patients;
 
+    @ManyToMany
+    private List<Medicament> medicaments;
+
     public Diagnose() {
     }
 
@@ -23,6 +26,7 @@ public class Diagnose extends BaseEntity{
         this.name = name;
         this.comments = comments;
         this.patients = new ArrayList<>();
+        this.medicaments = new ArrayList<>();
     }
 
     public String getName() {
@@ -41,4 +45,11 @@ public class Diagnose extends BaseEntity{
         this.comments = comments;
     }
 
+    public List<Patient> getPatients() {
+        return patients;
+    }
+
+    public void setPatients(List<Patient> patients) {
+        this.patients = patients;
+    }
 }
