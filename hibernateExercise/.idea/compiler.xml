@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="hibernateExercise" />
+        <module name="GringottsDatabase" />
+        <module name="SalesDatabase" />
+        <module name="UniversitySystem" />
       </profile>
     </annotationProcessing>
   </component>
