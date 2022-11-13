@@ -1,14 +1,18 @@
 package gameStore.domain.entities;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import java.util.HashSet;
 import java.util.Set;
+
+import static gameStore.constants.Validations.EMAIL_PATTERN;
 
 @Entity
 @Table(name = "users")
 public class User extends BaseEntity {
 
     @Column(nullable = false, unique = true)
+    @Email(regexp = EMAIL_PATTERN)
     private String email;
 
     @Column(nullable = false)
