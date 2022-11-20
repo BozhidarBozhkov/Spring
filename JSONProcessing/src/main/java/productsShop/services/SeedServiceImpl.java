@@ -2,9 +2,9 @@ package productsShop.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import productsShop.domain.dtos.CategoryImportDto;
-import productsShop.domain.dtos.ProductImportDto;
-import productsShop.domain.dtos.UserImportDto;
+import productsShop.domain.dtos.categories.CategoryImportDto;
+import productsShop.domain.dtos.products.ProductImportDto;
+import productsShop.domain.dtos.users.UserImportDto;
 import productsShop.domain.entities.Category;
 import productsShop.domain.entities.Product;
 import productsShop.domain.entities.User;

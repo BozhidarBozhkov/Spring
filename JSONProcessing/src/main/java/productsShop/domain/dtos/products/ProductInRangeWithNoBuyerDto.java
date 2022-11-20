@@ -1,4 +1,4 @@
-package productsShop.domain.dtos;
+package productsShop.domain.dtos.products;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -11,10 +11,12 @@ import java.math.BigDecimal;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductImportDto {
+public class ProductInRangeWithNoBuyerDto {
 
     private String name;
 
     private BigDecimal price;
+
+    private String seller;
 
 }

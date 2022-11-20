@@ -4,7 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="deb530f4-5194-4bb9-88a2-38c5876be466" name="Changes" comment="" />
+    <list default="true" id="deb530f4-5194-4bb9-88a2-38c5876be466" name="Changes" comment="Product Shop&#10;creating and seeding the database">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/CommandRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/CommandRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/constant/Paths.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/constant/Paths.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/constant/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/constant/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/CategoryImportDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/categories/CategoryImportDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/ProductImportDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/products/ProductImportDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/UserImportDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/domain/dtos/users/UserImportDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/repositories/CategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/repositories/CategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/repositories/ProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/repositories/ProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/repositories/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/repositories/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/productsShop/services/SeedServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/productsShop/services/SeedServiceImpl.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,11 +44,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources/dbContent" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
+      <recent name="productsShop.domain.dtos.products" />
+      <recent name="productsShop.domain.dtos.users" />
       <recent name="productsShop.services" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -70,6 +87,30 @@
       <option name="presentableId" value="Default" />
       <updated>1668443819285</updated>
     </task>
+    <task id="LOCAL-00001" summary="Product Shop&#10;creating and seeding the database">
+      <created>1668887547747</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1668887547747</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Product Shop&#10;creating and seeding the database" />
+    <option name="LAST_COMMIT_MESSAGE" value="Product Shop&#10;creating and seeding the database" />
   </component>
 </project>

@@ -1,4 +1,4 @@
-package productsShop.domain.dtos;
+package productsShop.domain.dtos.users;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
