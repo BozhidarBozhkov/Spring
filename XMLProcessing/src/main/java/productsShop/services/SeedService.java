@@ -9,7 +9,7 @@ public interface SeedService {
 
     void seedCategories() throws IOException, JAXBException;
 
-    void seedProducts() throws IOException;
+    void seedProducts() throws IOException, JAXBException;
 
     default void seedAll() throws IOException, JAXBException {
         seedUsers();

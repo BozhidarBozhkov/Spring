@@ -3,6 +3,7 @@ package productsShop.services;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import productsShop.domain.dtos.categories.wrappers.CategoriesImportWrapperDto;
+import productsShop.domain.dtos.products.wrappers.ProductsImportWrapperDto;
 import productsShop.domain.dtos.users.wrappers.UsersImportWrapperDto;
 import productsShop.domain.entities.Category;
 import productsShop.domain.entities.Product;
@@ -76,20 +77,20 @@ public class SeedServiceImpl implements SeedService {
     }
 
     @Override
-    public void seedProducts() throws IOException {
-//        if (this.productRepository.count() == 0) {
-//            final FileReader fileReader = new FileReader(PRODUCTS_XML_PATH.toFile());
-//
-//            List<Product> products = Arrays.stream(GSON.fromJson(fileReader, ProductImportDto[].class))
-//                    .map(productImportDto -> MODEL_MAPPER.map(productImportDto, Product.class))
-//                    .map(this::setRandomSeller)
-//                    .map(this::setRandomBuyer)
-//                    .map(this::setRandomCategories)
-//                    .collect(Collectors.toList());
-//
-//            this.productRepository.saveAllAndFlush(products);
-//            fileReader.close();
-//        }
+    public void seedProducts() throws IOException, JAXBException {
+        if (this.productRepository.count() == 0) {
+            final FileReader fileReader = new FileReader(PRODUCTS_XML_PATH.toFile());
+
+            final JAXBContext context = JAXBContext.newInstance(ProductsImportWrapperDto.class);
+            final Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            final ProductsImportWrapperDto productsImportWrapperDto = (ProductsImportWrapperDto) unmarshaller.unmarshal(fileReader);
+            final List<Product> products = productsImportWrapperDto.getProducts().stream()
+                    .map(product -> MODEL_MAPPER.map(product, Product.class)).toList();
+
+            this.productRepository.saveAllAndFlush(products);
+            fileReader.close();
+        }
     }
 
     private Product setRandomCategories(Product product) {
