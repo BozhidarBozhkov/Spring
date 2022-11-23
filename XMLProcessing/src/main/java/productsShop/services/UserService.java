@@ -1,6 +1,6 @@
 package productsShop.services;
 
-import productsShop.domain.dtos.users.UsersWithProductsWrapperDto;
+import productsShop.domain.dtos.users.wrappers.UsersWithProductsWrapperDto;
 import productsShop.domain.dtos.users.UsersWithSoldProductsDto;
 
 import java.io.IOException;

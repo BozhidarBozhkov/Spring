@@ -2,7 +2,8 @@ package productsShop.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import productsShop.domain.dtos.users.UsersImportWrapperDto;
+import productsShop.domain.dtos.categories.wrappers.CategoriesImportWrapperDto;
+import productsShop.domain.dtos.users.wrappers.UsersImportWrapperDto;
 import productsShop.domain.entities.Category;
 import productsShop.domain.entities.Product;
 import productsShop.domain.entities.User;
@@ -57,17 +58,20 @@ public class SeedServiceImpl implements SeedService {
     }
 
     @Override
-    public void seedCategories() throws IOException {
-//        if (this.categoryRepository.count() == 0) {
-//            final FileReader fileReader = new FileReader(CATEGORY_XML_PATH.toFile());
-//
-//            List<Category> categories = Arrays.stream(GSON.fromJson(fileReader, CategoryImportDto[].class))
-//                    .map(categoryImportDto -> MODEL_MAPPER.map(categoryImportDto, Category.class))
-//                    .collect(Collectors.toList());
-//
-//            this.categoryRepository.saveAllAndFlush(categories);
-//            fileReader.close();
-//        }
+    public void seedCategories() throws IOException, JAXBException {
+        if (this.categoryRepository.count() == 0) {
+            final FileReader fileReader = new FileReader(CATEGORY_XML_PATH.toFile());
+
+            final JAXBContext context = JAXBContext.newInstance(CategoriesImportWrapperDto.class);
+            final Unmarshaller unmarshaller = context.createUnmarshaller();
+
+            final CategoriesImportWrapperDto categoriesDto = (CategoriesImportWrapperDto) unmarshaller.unmarshal(fileReader);
+
+            final List<Category> categories = categoriesDto.getCategories().stream().map(categoryDto -> MODEL_MAPPER.map(categoryDto, Category.class)).toList();
+
+            this.categoryRepository.saveAllAndFlush(categories);
+            fileReader.close();
+        }
 
     }
 

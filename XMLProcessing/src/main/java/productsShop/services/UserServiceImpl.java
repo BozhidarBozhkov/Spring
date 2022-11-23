@@ -4,7 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import productsShop.domain.dtos.users.UserDto;
 import productsShop.domain.dtos.users.UserWithProductsDto;
-import productsShop.domain.dtos.users.UsersWithProductsWrapperDto;
+import productsShop.domain.dtos.users.wrappers.UsersWithProductsWrapperDto;
 import productsShop.domain.dtos.users.UsersWithSoldProductsDto;
 import productsShop.repositories.UserRepository;
 

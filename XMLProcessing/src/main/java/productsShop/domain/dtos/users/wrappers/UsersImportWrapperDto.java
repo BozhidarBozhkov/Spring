@@ -1,9 +1,10 @@
-package productsShop.domain.dtos.users;
+package productsShop.domain.dtos.users.wrappers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import productsShop.domain.dtos.users.UserImportDto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

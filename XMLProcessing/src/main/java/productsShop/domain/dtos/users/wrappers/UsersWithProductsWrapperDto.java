@@ -1,8 +1,9 @@
-package productsShop.domain.dtos.users;
+package productsShop.domain.dtos.users.wrappers;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import productsShop.domain.dtos.users.UserWithProductsDto;
 
 import java.util.List;
 
