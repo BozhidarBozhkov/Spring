@@ -86,7 +86,11 @@ public class SeedServiceImpl implements SeedService {
 
             final ProductsImportWrapperDto productsImportWrapperDto = (ProductsImportWrapperDto) unmarshaller.unmarshal(fileReader);
             final List<Product> products = productsImportWrapperDto.getProducts().stream()
-                    .map(product -> MODEL_MAPPER.map(product, Product.class)).toList();
+                    .map(product -> MODEL_MAPPER.map(product, Product.class))
+                    .map(this::setRandomSeller)
+                    .map(this::setRandomBuyer)
+                    .map(this::setRandomCategories)
+                    .toList();
 
             this.productRepository.saveAllAndFlush(products);
             fileReader.close();

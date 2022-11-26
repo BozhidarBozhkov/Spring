@@ -1,33 +1,35 @@
 package productsShop.constant;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import org.modelmapper.ModelMapper;
 
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Path;
-import java.util.List;
 
 public enum Utils {
     ;
     public static final ModelMapper MODEL_MAPPER = new ModelMapper();
 
-    public static final Gson GSON = new GsonBuilder().setPrettyPrinting().create();
+    public static <T> void writeXMLToFile(T data, Path filePath) throws IOException, JAXBException {
 
-    public static void writeJsonToFile(List<?> objects, Path filePath) throws IOException {
-        final FileWriter fileWriter = new FileWriter(filePath.toFile());
+        File file = filePath.toFile();
 
-        GSON.toJson(objects, fileWriter);
+        final JAXBContext context = JAXBContext.newInstance(data.getClass());
+        final Marshaller marshaller = context.createMarshaller();
 
-        fileWriter.flush();
-        fileWriter.close();
+        marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+
+        marshaller.marshal(data, file);
     }
 
     public static void writeJsonToFile(Object object, Path filePath) throws IOException {
         final FileWriter fileWriter = new FileWriter(filePath.toFile());
 
-        GSON.toJson(object, fileWriter);
+        // GSON.toJson(object, fileWriter);
 
         fileWriter.flush();
         fileWriter.close();

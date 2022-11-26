@@ -1,33 +1,26 @@
-package productsShop.domain.dtos.products;
+package productsShop.domain.dtos.products.wrappers;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import productsShop.domain.dtos.products.ProductInRangeWithNoBuyerDto;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import java.math.BigDecimal;
+import java.util.List;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@XmlRootElement(name = "product")
+@XmlRootElement(name = "products")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class SoldProductsDto {
+public class ProductsInRangeWithNoBuyerWrapperDto {
 
-    @XmlElement
-    private String name;
+    @XmlElement(name = "product")
+    private List<ProductInRangeWithNoBuyerDto> products;
 
-    @XmlElement
-    private BigDecimal price;
-
-    @XmlElement(name = "buyer-first-name")
-    private String buyerFirstName;
-
-    @XmlElement(name = "buyer-last-name")
-    private String buyerLastName;
 }

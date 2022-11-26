@@ -12,7 +12,7 @@ import java.util.Optional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
-    @Query(value = "select * from `product_shop`.users order by RAND () LIMIT 1",nativeQuery = true)
+    @Query(value = "select * from `product_shop_xml`.users order by RAND () LIMIT 1",nativeQuery = true)
     Optional<User> getRandomEntity();
 
     Optional<List<User>> findAllByOrderByLastNameAscFirstNameAsc();

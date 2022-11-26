@@ -10,6 +10,7 @@ import productsShop.services.UserService;
 
 
 import javax.transaction.Transactional;
+import java.math.BigDecimal;
 
 @Component
 public class CommandRunner implements CommandLineRunner {
@@ -31,11 +32,11 @@ public class CommandRunner implements CommandLineRunner {
     @Transactional
     public void run(String... args) throws Exception {
         this.seedService.seedAll();
-//        // Query 1
-//        this.productService.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(BigDecimal.valueOf(500), BigDecimal.valueOf(1000));
-//
+      //   Query 1
+      //  this.productService.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(BigDecimal.valueOf(500), BigDecimal.valueOf(1000));
+
 //        // Query 2
-//        this.userService.findAllByOrderByLastNameAscFirstNameAsc();
+        this.userService.findAllByOrderByLastNameAscFirstNameAsc();
 //
 //        // Query 3
 //        this.categoryService.getCategorySummary();
