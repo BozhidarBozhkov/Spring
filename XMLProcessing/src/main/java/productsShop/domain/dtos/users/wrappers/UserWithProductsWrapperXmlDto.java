@@ -13,17 +13,17 @@ import java.util.List;
 @NoArgsConstructor
 @XmlRootElement(name = "users")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class UsersWithProductsWrapperDto {
+public class UserWithProductsWrapperXmlDto {
 
-    @XmlAttribute(name = "count")
-    private Integer usersCount;
+    @XmlAttribute
+    private Integer count;
 
     @XmlElement(name = "user")
     private List<UserWithProductsDto> users;
 
-    public UsersWithProductsWrapperDto(List<UserWithProductsDto> users) {
+    public UserWithProductsWrapperXmlDto(List<UserWithProductsDto> users) {
         this.users = users;
-        this.usersCount = users.size();
+        this.count = users.size();
     }
-}
 
+}

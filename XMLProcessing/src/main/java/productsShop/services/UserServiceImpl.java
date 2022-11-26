@@ -49,7 +49,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public UsersWithProductsWrapperDto usersWithProducts() throws IOException {
+    public UsersWithProductsWrapperDto usersWithProducts() throws IOException, JAXBException {
         final List<UserWithProductsDto> usersAndProducts = this.userRepository.findAllByOrderByLastNameAscFirstNameAsc()
                 .orElseThrow(NoSuchElementException::new)
                 .stream().map(user -> MODEL_MAPPER.map(user, UserDto.class))
@@ -58,7 +58,7 @@ public class UserServiceImpl implements UserService {
 
         final UsersWithProductsWrapperDto usersWithProductsWrapperDto = new UsersWithProductsWrapperDto(usersAndProducts);
 
-        writeJsonToFile(usersWithProductsWrapperDto, USERS_AND_PRODUCTS_XML_PATH);
+        writeXMLToFile(usersWithProductsWrapperDto, USERS_AND_PRODUCTS_XML_PATH);
 
         return usersWithProductsWrapperDto;
     }

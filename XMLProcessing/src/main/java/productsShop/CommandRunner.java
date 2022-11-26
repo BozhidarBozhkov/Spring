@@ -35,13 +35,13 @@ public class CommandRunner implements CommandLineRunner {
       //   Query 1
       //  this.productService.findAllByPriceBetweenAndBuyerIsNullOrderByPrice(BigDecimal.valueOf(500), BigDecimal.valueOf(1000));
 
-//        // Query 2
-        this.userService.findAllByOrderByLastNameAscFirstNameAsc();
-//
+////        // Query 2
+//        this.userService.findAllByOrderByLastNameAscFirstNameAsc();
+////
 //        // Query 3
 //        this.categoryService.getCategorySummary();
 
         // Query 4
-//        this.userService.usersWithProducts();
+        this.userService.usersWithProducts();
     }
 }
