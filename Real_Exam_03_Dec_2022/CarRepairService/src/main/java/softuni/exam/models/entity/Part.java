@@ -1,0 +1,29 @@
+package softuni.exam.models.entity;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+@Table(name = "parts")
+public class Part extends BaseEntity{
+
+    @Column(name = "part_name", nullable = false, unique = true)
+    private String partName;
+
+    @Column
+    private Double price;
+
+    @Column
+    private Integer quantity;
+}
