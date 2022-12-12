@@ -24,7 +24,7 @@ public class Task extends BaseEntity{
     @Column(nullable = false)
     private BigDecimal price;
 
-    @Column
+    @Column(nullable = false)
     private LocalDateTime date;
 
     @ManyToOne

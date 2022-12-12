@@ -21,9 +21,9 @@ public class Part extends BaseEntity{
     @Column(name = "part_name", nullable = false, unique = true)
     private String partName;
 
-    @Column
+    @Column(nullable = false)
     private Double price;
 
-    @Column
+    @Column(nullable = false)
     private Integer quantity;
 }
