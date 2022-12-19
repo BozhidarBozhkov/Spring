@@ -6,7 +6,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Size;
 import java.time.LocalDate;
 import java.util.List;
 
@@ -18,11 +17,9 @@ import java.util.List;
 @Table(name = "companies")
 public class Company extends BaseEntity{
 
-    @Size(min = 2, max = 40)
     @Column(nullable = false, unique = true)
     private String name;
 
-    @Size(min = 2, max = 30)
     @Column(nullable = false)
     private String website;
 

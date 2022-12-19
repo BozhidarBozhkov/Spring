@@ -9,8 +9,7 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
+import java.util.Objects;
 
 @Getter
 @Setter
@@ -20,23 +19,25 @@ import javax.validation.constraints.Size;
 @Table(name = "jobs")
 public class Job extends BaseEntity{
 
-    @Size(min = 2, max = 40)
     @Column(nullable = false)
     private String title;
 
-    @Min(300)
     @Column(nullable = false)
     private Double salary;
 
-    @Min(100)
     @Column(name = "hoursaweek", nullable = false)
     private Double hoursAWeek;
 
-    @Size(min = 5)
     @Column(columnDefinition = "TEXT", nullable = false)
     private String description;
 
     @ManyToOne
     private Company company;
 
+    @Override
+    public String toString() {
+        return String.format("Job title %s" + System.lineSeparator()
+        + "-Salary: %.2f$" + System.lineSeparator()
+        + "--Hours a week: %.2fh." + System.lineSeparator(), title, salary, hoursAWeek);
+    }
 }
